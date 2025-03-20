@@ -241,7 +241,7 @@
         document.getElementById("userText").innerText = "You said: " + userSpeech;
         console.log("User Speech: " + userSpeech); // Debugging log
 
-        fetch("http://127.0.0.1:5000/voice-assistant", {
+        fetch("https://bihardiwasapi-7ehk.vercel.app/voice-assistantt", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: userSpeech })
