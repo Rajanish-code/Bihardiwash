@@ -226,9 +226,15 @@
         }
 
 
+function startListening() {
+    let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    
+    if (!SpeechRecognition) {
+        alert("Speech Recognition is not supported on this browser.");
+        return;
+    }
 
-        function startListening() {
-    let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    let recognition = new SpeechRecognition();
     recognition.lang = "en-US";
     recognition.start();
 
@@ -239,7 +245,7 @@
     recognition.onresult = function(event) {
         let userSpeech = event.results[0][0].transcript;
         document.getElementById("userText").innerText = "You said: " + userSpeech;
-        console.log("User Speech: " + userSpeech); // Debugging log
+        console.log("User Speech: " + userSpeech);
 
         fetch("https://bihardiwasapi.vercel.app/voice-assistant", {
             method: "POST",
@@ -249,7 +255,7 @@
         .then(response => response.json())
         .then(data => {
             document.getElementById("assistantResponse").innerText = "AI: " + data.reply;
-            console.log("Assistant Response: " + data.reply); // Debugging log
+            console.log("Assistant Response: " + data.reply);
             let speech = new SpeechSynthesisUtterance(data.reply);
             window.speechSynthesis.speak(speech);
         })
@@ -260,6 +266,7 @@
 
     recognition.onerror = function(event) {
         console.error("Speech recognition error:", event.error);
+        alert("Error: " + event.error);
     };
 
     recognition.onspeechend = function() {
