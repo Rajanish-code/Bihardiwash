@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -241,7 +241,7 @@
         document.getElementById("userText").innerText = "You said: " + userSpeech;
         console.log("User Speech: " + userSpeech); // Debugging log
 
-        fetch("https://bihardiwasapi-7ehk.vercel.app/voice-assistantt", {
+        fetch("https://www.bihardiwasapi.vercel.app/voice-assistant", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ query: userSpeech })
