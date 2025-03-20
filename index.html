@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bihar Diwas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .chart-container {
+            width: 90%;
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+        }
+        
+        header {
+            background: #008000;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+            animation: fadeIn 2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        header img {
+            height: 50px;
+        }
+        section {
+            padding: 20px;
+        }
+        .content {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px gray;
+            border-radius: 10px;
+            animation: slideIn 1.5s ease-in-out;
+            text-align: left;
+        }
+        .map-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .map-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background: #008000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            transition: transform 0.3s;
+        }
+        button:hover {
+            background: #005700;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #b0afaf;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            /* margin-top: 40px; */
+            font-size: 16px;
+            
+        }
+
+        .footer-bottom{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-bottom a{
+       text-decoration: none;
+
+        }
+
+        .college-about{
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            justify-content: space-between;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 15px;
+            }
+            .content {
+                padding: 15px;
+            }
+            .chart-container {
+                max-width: 100%;
+                padding: 10px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+            }
+
+
+            .college-about{
+                flex-direction: column-reverse;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg" alt="India Flag">
+        Bihar Diwas - Celebrating the Pride of Bihar
+        <img src="https://bstdc.bihar.gov.in/images/bihar.jpg" alt="Bihar Map">
+    </header>
+    
+    <section>
+        <div class="map-container">
+            <img src="https://cdn.sketchbubble.com/pub/media/catalog/product/optimized1/7/d/7dfac904ae5d57a66dfa80bdbb90de93363b17bca7aa93725ce346bd5718ccc9/bihar-map-slide2.png" alt="Bihar Map">
+        </div>
+        <div class="content">
+            <h2>Bihar Diwas 2025: Celebrating the Glorious Heritage of Bihar</h2>
+            <p>Bihar Diwas, observed on March 22nd every year, marks the foundation day of the state of Bihar. It commemorates the day in 1912 when Bihar was carved out from the Bengal Presidency as an independent province. This special day is a tribute to the glorious past, cultural richness, and immense contributions of Bihar to India.</p>
+            <h3>Historical Significance</h3>
+
+            <div class="map-container">
+                <img src="https://s7ap1.scene7.com/is/image/incredibleindia/nalanda-stupa-heritage-nalanda-bihar-1-attr-hero?qlt=82&ts=1726741017068" alt="Bihar Map">
+            </div>
+            <p>Bihar has been a land of knowledge, wisdom, and historical importance since ancient times. It was home to some of the greatest scholars and leaders, including Chanakya, Aryabhata, Guru Gobind Singh, and Dr. Rajendra Prasad. The state has also witnessed the rise of great empires such as the Maurya and Gupta dynasties, under which India flourished as a global power.</p>
+            <h3>Cultural & Educational Heritage</h3>
+            <div class="map-container">
+                <img src="https://retiredkalam.com/wp-content/uploads/2023/10/image-243.png?w=1024" alt="Bihar Map">
+            </div>
+            <ul>
+                <li>Nalanda and Vikramshila Universities, among the oldest learning centers in the world, symbolize Bihar’s academic excellence.</li>
+                <li>Bihar is the birthplace of two major religions—Buddhism and Jainism—and has played a crucial role in India's spiritual history.</li>
+                <li>The state is renowned for its vibrant folk traditions, such as Chhath Puja, Madhubani painting, Bhojpuri and Maithili music, and folk dance forms like Jat-Jatin and Bidesia.</li>
+            </ul>
+            <h3>Economic & Modern Growth</h3>
+
+            <h2>📈 Industrial Development & Economic Growth in Bihar</h2>
+    
+            <div class="chart-container">
+                <canvas id="biharGrowthChart"></canvas>
+            </div>
+        
+            <p>In recent years, Bihar has shown remarkable growth in sectors like agriculture, education, infrastructure, and technology. With continuous development in industries and startups, the state is paving the way for a brighter future.</p>
+            <h3>Celebrations & Events</h3>
+            <ul>
+                <li>Cultural performances showcasing Bihar’s folk heritage.</li>
+                <li>Educational seminars and exhibitions highlighting the state’s contributions.</li>
+                <li>Competitions and awareness campaigns promoting Bihar’s development.</li>
+            </ul>
+            <h3>Conclusion</h3>
+            <p>Bihar Diwas is not just a celebration; it’s a reminder of our pride, heritage, and unity. As we honor this special day, let us pledge to contribute towards making Bihar a symbol of progress and prosperity. <strong>Jai Bihar!</strong></p>
+            <button onclick="showMessage()">Know More</button>
+        </div>
+
+        <div class="voice-container">
+            <h3>Ask About Bihar Diwas</h3>
+            <button onclick="startListening()">🎤 Speak</button>
+            <p id="userText"></p>
+            <p id="assistantResponse"></p>
+        </div>
+
+        <div class="college-about">
+            <div class="map-container">
+                <img src="https://i.ytimg.com/vi/t0lmqoFm54w/maxresdefault.jpg" alt="Bihar Map" >
+            </div>
+            <div>
+                <h3> Z.A Islamia College Of Technology & Management,Siwan</h3>
+
+        <p>Z.A. Islamia College of Technology & Management, located in Siwan, Bihar, is renowned for offering technical education alongside a comprehensive general curriculum. Our mission is to blend traditional technical teachings with modern educational practices, equipping students for diverse fields while grounding them in core values.</p>
+         <p><i class="fa-solid fa-hand-point-right"></i> Director :-  <span>Sharique Zafar Ghani</span></p>
+            </div>
+      
+        </div>
+    </section>
+
+
+   
+
+
+    <footer>
+       
+        <div class="footer-bottom"><a href="https://www.linkedin.com/in/rajanish-kumar-9a8b59238?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fa-solid fa-hand-point-right" style="color: red; font-size: 1.5em;"></i> Created by <strong>Rajanish Kumar</strong></a></div>
+    </footer>
+
+    <script>
+        function showMessage() {
+            alert("Bihar is a land of rich culture, history, and heritage. Join us in celebrating its greatness!");
+        }
+
+
+
+        function startListening() {
+    let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+    recognition.lang = "en-US";
+    recognition.start();
+
+    recognition.onstart = function() {
+        console.log("Voice recognition started...");
+    };
+
+    recognition.onresult = function(event) {
+        let userSpeech = event.results[0][0].transcript;
+        document.getElementById("userText").innerText = "You said: " + userSpeech;
+        console.log("User Speech: " + userSpeech); // Debugging log
+
+        fetch("http://127.0.0.1:5000/voice-assistant", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ query: userSpeech })
+        })
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("assistantResponse").innerText = "AI: " + data.reply;
+            console.log("Assistant Response: " + data.reply); // Debugging log
+            let speech = new SpeechSynthesisUtterance(data.reply);
+            window.speechSynthesis.speak(speech);
+        })
+        .catch(error => {
+            console.error("Error fetching response:", error);
+        });
+    };
+
+    recognition.onerror = function(event) {
+        console.error("Speech recognition error:", event.error);
+    };
+
+    recognition.onspeechend = function() {
+        recognition.stop();
+        console.log("Voice recognition stopped.");
+    };
+}
+
+
+
+const ctx = document.getElementById('biharGrowthChart').getContext('2d');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Agriculture", "Manufacturing", "Education", "IT Sector", "Tourism", "Infrastructure"],
+        datasets: [{
+            label: "Growth Rate (%)",
+            data: [7.5, 5.2, 8.3, 6.8, 9.1, 7.2],
+            backgroundColor: [
+                '#FF5733', '#33B5E5', '#FFC107', '#4CAF50', '#9C27B0', '#FF9800'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        },
+        animation: {
+            duration: 1500
+        }
+    }
+});
+    </script>
+</body>
+</html>
